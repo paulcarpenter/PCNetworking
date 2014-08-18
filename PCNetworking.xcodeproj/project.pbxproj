@@ -7,32 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3C1425EF1925D85D0005ECE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1425EE1925D85D0005ECE3 /* Foundation.framework */; };
-		3C1425F11925D85D0005ECE3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1425F01925D85D0005ECE3 /* CoreGraphics.framework */; };
-		3C1425F31925D85D0005ECE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1425F21925D85D0005ECE3 /* UIKit.framework */; };
-		3C1425F91925D85D0005ECE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C1425F71925D85D0005ECE3 /* InfoPlist.strings */; };
-		3C1425FB1925D85D0005ECE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1425FA1925D85D0005ECE3 /* main.m */; };
-		3C1425FF1925D85D0005ECE3 /* PCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1425FE1925D85D0005ECE3 /* PCAppDelegate.m */; };
-		3C1426011925D85D0005ECE3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C1426001925D85D0005ECE3 /* Images.xcassets */; };
-		3C1426081925D85D0005ECE3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1426071925D85D0005ECE3 /* XCTest.framework */; };
-		3C1426091925D85D0005ECE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1425EE1925D85D0005ECE3 /* Foundation.framework */; };
-		3C14260A1925D85D0005ECE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1425F21925D85D0005ECE3 /* UIKit.framework */; };
-		3C1426121925D85D0005ECE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3C1426101925D85D0005ECE3 /* InfoPlist.strings */; };
-		3C1426141925D85D0005ECE3 /* PCNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1426131925D85D0005ECE3 /* PCNetworkingTests.m */; };
+		3C32CB7519637E850095C170 /* PCNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C32CB7419637E850095C170 /* PCNetworkRequest.m */; };
+		3CE90BC4195BE756007DBA66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1425EE1925D85D0005ECE3 /* Foundation.framework */; };
+		3CE90BD1195BE756007DBA66 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1426071925D85D0005ECE3 /* XCTest.framework */; };
+		3CE90BD2195BE756007DBA66 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1425EE1925D85D0005ECE3 /* Foundation.framework */; };
+		3CE90BD3195BE756007DBA66 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1425F21925D85D0005ECE3 /* UIKit.framework */; };
+		3CE90BD6195BE756007DBA66 /* libPCNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CE90BC3195BE756007DBA66 /* libPCNetworking.a */; };
+		3CE90BE5195BE75A007DBA66 /* PCNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3294A9195BCEB700BF610A /* PCNetworkManager.m */; };
+		3CE90BE6195BE75A007DBA66 /* PCNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3294A9195BCEB700BF610A /* PCNetworkManager.m */; };
+		3CE90BE7195BE75C007DBA66 /* NSString+PCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2AF73B193EBB1300F9869A /* NSString+PCNetworking.m */; };
+		3CE90BE8195BE75D007DBA66 /* NSString+PCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2AF73B193EBB1300F9869A /* NSString+PCNetworking.m */; };
+		3CE90BE9195BE760007DBA66 /* NSObject+PCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C14261E1925D8740005ECE3 /* NSObject+PCNetworking.m */; };
+		3CE90BEA195BE761007DBA66 /* NSObject+PCNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C14261E1925D8740005ECE3 /* NSObject+PCNetworking.m */; };
+		3CE90BEB195BE763007DBA66 /* PCNetworkProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCF1C2F1935836000C94D0A /* PCNetworkProperty.m */; };
+		3CE90BEC195BE764007DBA66 /* PCNetworkProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCF1C2F1935836000C94D0A /* PCNetworkProperty.m */; };
+		3CE90BED195BE766007DBA66 /* PCTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCF1C20193452CC00C94D0A /* PCTestModel.m */; };
+		3CE90BEE195BE766007DBA66 /* PCTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CCF1C20193452CC00C94D0A /* PCTestModel.m */; };
+		3CE90BEF195BE788007DBA66 /* PCNetworkingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1426131925D85D0005ECE3 /* PCNetworkingTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C14260B1925D85D0005ECE3 /* PBXContainerItemProxy */ = {
+		3CE90BD4195BE756007DBA66 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3C1425E31925D85D0005ECE3 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 3C1425EA1925D85D0005ECE3;
+			remoteGlobalIDString = 3CE90BC2195BE756007DBA66;
 			remoteInfo = PCNetworking;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		3CE90BC1195BE756007DBA66 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		3C1425EB1925D85D0005ECE3 /* PCNetworking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PCNetworking.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1425EE1925D85D0005ECE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C1425F01925D85D0005ECE3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3C1425F21925D85D0005ECE3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -40,34 +56,47 @@
 		3C1425F81925D85D0005ECE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C1425FA1925D85D0005ECE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3C1425FC1925D85D0005ECE3 /* PCNetworking-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PCNetworking-Prefix.pch"; sourceTree = "<group>"; };
-		3C1425FD1925D85D0005ECE3 /* PCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCAppDelegate.h; sourceTree = "<group>"; };
-		3C1425FE1925D85D0005ECE3 /* PCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCAppDelegate.m; sourceTree = "<group>"; };
-		3C1426001925D85D0005ECE3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3C1426061925D85D0005ECE3 /* PCNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PCNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1426071925D85D0005ECE3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3C14260F1925D85D0005ECE3 /* PCNetworkingTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PCNetworkingTests-Info.plist"; sourceTree = "<group>"; };
 		3C1426111925D85D0005ECE3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3C1426131925D85D0005ECE3 /* PCNetworkingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCNetworkingTests.m; sourceTree = "<group>"; };
+		3C14261D1925D8740005ECE3 /* NSObject+PCNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+PCNetworking.h"; sourceTree = "<group>"; };
+		3C14261E1925D8740005ECE3 /* NSObject+PCNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+PCNetworking.m"; sourceTree = "<group>"; };
+		3C2AF73A193EBB1300F9869A /* NSString+PCNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PCNetworking.h"; sourceTree = "<group>"; };
+		3C2AF73B193EBB1300F9869A /* NSString+PCNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PCNetworking.m"; sourceTree = "<group>"; };
+		3C3294A4195BCE3F00BF610A /* libPods-AFNetworking.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-AFNetworking.a"; path = "../pareup/iOS/lib/Pods/Pods/build/Debug-iphoneos/libPods-AFNetworking.a"; sourceTree = "<group>"; };
+		3C3294A5195BCE3F00BF610A /* libPods-ReactiveCocoa.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ReactiveCocoa.a"; path = "../pareup/iOS/lib/Pods/Pods/build/Debug-iphoneos/libPods-ReactiveCocoa.a"; sourceTree = "<group>"; };
+		3C3294A8195BCEB700BF610A /* PCNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCNetworkManager.h; sourceTree = "<group>"; };
+		3C3294A9195BCEB700BF610A /* PCNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCNetworkManager.m; sourceTree = "<group>"; };
+		3C3294AB195BCF3300BF610A /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "../pareup/iOS/lib/Pods/Pods/build/Debug-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		3C32CB7319637E850095C170 /* PCNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCNetworkRequest.h; sourceTree = "<group>"; };
+		3C32CB7419637E850095C170 /* PCNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCNetworkRequest.m; sourceTree = "<group>"; };
+		3C32CB8B1963DF910095C170 /* PCNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCNetworking.h; sourceTree = "<group>"; };
+		3CCF1C1F193452CC00C94D0A /* PCTestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCTestModel.h; sourceTree = "<group>"; };
+		3CCF1C20193452CC00C94D0A /* PCTestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCTestModel.m; sourceTree = "<group>"; };
+		3CCF1C2E1935836000C94D0A /* PCNetworkProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCNetworkProperty.h; sourceTree = "<group>"; };
+		3CCF1C2F1935836000C94D0A /* PCNetworkProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCNetworkProperty.m; sourceTree = "<group>"; };
+		3CE90BC3195BE756007DBA66 /* libPCNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPCNetworking.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CE90BD0195BE756007DBA66 /* PCNetworkingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PCNetworkingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3C1425E81925D85D0005ECE3 /* Frameworks */ = {
+		3CE90BC0195BE756007DBA66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C1425F11925D85D0005ECE3 /* CoreGraphics.framework in Frameworks */,
-				3C1425F31925D85D0005ECE3 /* UIKit.framework in Frameworks */,
-				3C1425EF1925D85D0005ECE3 /* Foundation.framework in Frameworks */,
+				3CE90BC4195BE756007DBA66 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C1426031925D85D0005ECE3 /* Frameworks */ = {
+		3CE90BCD195BE756007DBA66 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C1426081925D85D0005ECE3 /* XCTest.framework in Frameworks */,
-				3C14260A1925D85D0005ECE3 /* UIKit.framework in Frameworks */,
-				3C1426091925D85D0005ECE3 /* Foundation.framework in Frameworks */,
+				3CE90BD1195BE756007DBA66 /* XCTest.framework in Frameworks */,
+				3CE90BD3195BE756007DBA66 /* UIKit.framework in Frameworks */,
+				3CE90BD6195BE756007DBA66 /* libPCNetworking.a in Frameworks */,
+				3CE90BD2195BE756007DBA66 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,8 +116,8 @@
 		3C1425EC1925D85D0005ECE3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3C1425EB1925D85D0005ECE3 /* PCNetworking.app */,
-				3C1426061925D85D0005ECE3 /* PCNetworkingTests.xctest */,
+				3CE90BC3195BE756007DBA66 /* libPCNetworking.a */,
+				3CE90BD0195BE756007DBA66 /* PCNetworkingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +125,9 @@
 		3C1425ED1925D85D0005ECE3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3C3294AB195BCF3300BF610A /* libPods.a */,
+				3C3294A4195BCE3F00BF610A /* libPods-AFNetworking.a */,
+				3C3294A5195BCE3F00BF610A /* libPods-ReactiveCocoa.a */,
 				3C1425EE1925D85D0005ECE3 /* Foundation.framework */,
 				3C1425F01925D85D0005ECE3 /* CoreGraphics.framework */,
 				3C1425F21925D85D0005ECE3 /* UIKit.framework */,
@@ -107,9 +139,19 @@
 		3C1425F41925D85D0005ECE3 /* PCNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				3C1425FD1925D85D0005ECE3 /* PCAppDelegate.h */,
-				3C1425FE1925D85D0005ECE3 /* PCAppDelegate.m */,
-				3C1426001925D85D0005ECE3 /* Images.xcassets */,
+				3C32CB8B1963DF910095C170 /* PCNetworking.h */,
+				3C3294A8195BCEB700BF610A /* PCNetworkManager.h */,
+				3C3294A9195BCEB700BF610A /* PCNetworkManager.m */,
+				3C32CB7319637E850095C170 /* PCNetworkRequest.h */,
+				3C32CB7419637E850095C170 /* PCNetworkRequest.m */,
+				3C2AF73A193EBB1300F9869A /* NSString+PCNetworking.h */,
+				3C2AF73B193EBB1300F9869A /* NSString+PCNetworking.m */,
+				3C14261D1925D8740005ECE3 /* NSObject+PCNetworking.h */,
+				3C14261E1925D8740005ECE3 /* NSObject+PCNetworking.m */,
+				3CCF1C2E1935836000C94D0A /* PCNetworkProperty.h */,
+				3CCF1C2F1935836000C94D0A /* PCNetworkProperty.m */,
+				3CCF1C1F193452CC00C94D0A /* PCTestModel.h */,
+				3CCF1C20193452CC00C94D0A /* PCTestModel.m */,
 				3C1425F51925D85D0005ECE3 /* Supporting Files */,
 			);
 			path = PCNetworking;
@@ -147,13 +189,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3C1425EA1925D85D0005ECE3 /* PCNetworking */ = {
+		3CE90BC2195BE756007DBA66 /* PCNetworking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C1426171925D85D0005ECE3 /* Build configuration list for PBXNativeTarget "PCNetworking" */;
+			buildConfigurationList = 3CE90BDF195BE756007DBA66 /* Build configuration list for PBXNativeTarget "PCNetworking" */;
 			buildPhases = (
-				3C1425E71925D85D0005ECE3 /* Sources */,
-				3C1425E81925D85D0005ECE3 /* Frameworks */,
-				3C1425E91925D85D0005ECE3 /* Resources */,
+				3CE90BBF195BE756007DBA66 /* Sources */,
+				3CE90BC0195BE756007DBA66 /* Frameworks */,
+				3CE90BC1195BE756007DBA66 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -161,25 +203,25 @@
 			);
 			name = PCNetworking;
 			productName = PCNetworking;
-			productReference = 3C1425EB1925D85D0005ECE3 /* PCNetworking.app */;
-			productType = "com.apple.product-type.application";
+			productReference = 3CE90BC3195BE756007DBA66 /* libPCNetworking.a */;
+			productType = "com.apple.product-type.library.static";
 		};
-		3C1426051925D85D0005ECE3 /* PCNetworkingTests */ = {
+		3CE90BCF195BE756007DBA66 /* PCNetworkingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3C14261A1925D85D0005ECE3 /* Build configuration list for PBXNativeTarget "PCNetworkingTests" */;
+			buildConfigurationList = 3CE90BE2195BE756007DBA66 /* Build configuration list for PBXNativeTarget "PCNetworkingTests" */;
 			buildPhases = (
-				3C1426021925D85D0005ECE3 /* Sources */,
-				3C1426031925D85D0005ECE3 /* Frameworks */,
-				3C1426041925D85D0005ECE3 /* Resources */,
+				3CE90BCC195BE756007DBA66 /* Sources */,
+				3CE90BCD195BE756007DBA66 /* Frameworks */,
+				3CE90BCE195BE756007DBA66 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3C14260C1925D85D0005ECE3 /* PBXTargetDependency */,
+				3CE90BD5195BE756007DBA66 /* PBXTargetDependency */,
 			);
 			name = PCNetworkingTests;
 			productName = PCNetworkingTests;
-			productReference = 3C1426061925D85D0005ECE3 /* PCNetworkingTests.xctest */;
+			productReference = 3CE90BD0195BE756007DBA66 /* PCNetworkingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -191,11 +233,6 @@
 				CLASSPREFIX = PC;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Paul Carpenter";
-				TargetAttributes = {
-					3C1426051925D85D0005ECE3 = {
-						TestTargetID = 3C1425EA1925D85D0005ECE3;
-					};
-				};
 			};
 			buildConfigurationList = 3C1425E61925D85D0005ECE3 /* Build configuration list for PBXProject "PCNetworking" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -209,57 +246,56 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3C1425EA1925D85D0005ECE3 /* PCNetworking */,
-				3C1426051925D85D0005ECE3 /* PCNetworkingTests */,
+				3CE90BC2195BE756007DBA66 /* PCNetworking */,
+				3CE90BCF195BE756007DBA66 /* PCNetworkingTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3C1425E91925D85D0005ECE3 /* Resources */ = {
+		3CE90BCE195BE756007DBA66 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C1425F91925D85D0005ECE3 /* InfoPlist.strings in Resources */,
-				3C1426011925D85D0005ECE3 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3C1426041925D85D0005ECE3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3C1426121925D85D0005ECE3 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3C1425E71925D85D0005ECE3 /* Sources */ = {
+		3CE90BBF195BE756007DBA66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C1425FB1925D85D0005ECE3 /* main.m in Sources */,
-				3C1425FF1925D85D0005ECE3 /* PCAppDelegate.m in Sources */,
+				3CE90BE9195BE760007DBA66 /* NSObject+PCNetworking.m in Sources */,
+				3CE90BEB195BE763007DBA66 /* PCNetworkProperty.m in Sources */,
+				3CE90BE5195BE75A007DBA66 /* PCNetworkManager.m in Sources */,
+				3C32CB7519637E850095C170 /* PCNetworkRequest.m in Sources */,
+				3CE90BED195BE766007DBA66 /* PCTestModel.m in Sources */,
+				3CE90BE7195BE75C007DBA66 /* NSString+PCNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3C1426021925D85D0005ECE3 /* Sources */ = {
+		3CE90BCC195BE756007DBA66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C1426141925D85D0005ECE3 /* PCNetworkingTests.m in Sources */,
+				3CE90BEA195BE761007DBA66 /* NSObject+PCNetworking.m in Sources */,
+				3CE90BEC195BE764007DBA66 /* PCNetworkProperty.m in Sources */,
+				3CE90BE6195BE75A007DBA66 /* PCNetworkManager.m in Sources */,
+				3CE90BEE195BE766007DBA66 /* PCTestModel.m in Sources */,
+				3CE90BEF195BE788007DBA66 /* PCNetworkingTests.m in Sources */,
+				3CE90BE8195BE75D007DBA66 /* NSString+PCNetworking.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3C14260C1925D85D0005ECE3 /* PBXTargetDependency */ = {
+		3CE90BD5195BE756007DBA66 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3C1425EA1925D85D0005ECE3 /* PCNetworking */;
-			targetProxy = 3C14260B1925D85D0005ECE3 /* PBXContainerItemProxy */;
+			target = 3CE90BC2195BE756007DBA66 /* PCNetworking */;
+			targetProxy = 3CE90BD4195BE756007DBA66 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -315,6 +351,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../pareup/iOS/lib/Pods/Pods/Headers",
+					"$(SRCROOT)/../pareup/iOS/lib/Pods/Pods/Headers/AFNetworking",
+					"$(SRCROOT)/../pareup/iOS/lib/Pods/Pods/Headers/ReactiveCocoa",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -347,42 +390,50 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../pareup/iOS/lib/Pods/Pods/Headers",
+					"$(SRCROOT)/../pareup/iOS/lib/Pods/Pods/Headers/AFNetworking",
+					"$(SRCROOT)/../pareup/iOS/lib/Pods/Pods/Headers/ReactiveCocoa",
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		3C1426181925D85D0005ECE3 /* Debug */ = {
+		3CE90BE0195BE756007DBA66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DSTROOT = /tmp/PCNetworking.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PCNetworking/PCNetworking-Prefix.pch";
-				INFOPLIST_FILE = "PCNetworking/PCNetworking-Info.plist";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
+				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		3C1426191925D85D0005ECE3 /* Release */ = {
+		3CE90BE1195BE756007DBA66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DSTROOT = /tmp/PCNetworking.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PCNetworking/PCNetworking-Prefix.pch";
-				INFOPLIST_FILE = "PCNetworking/PCNetworking-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
-		3C14261B1925D85D0005ECE3 /* Debug */ = {
+		3CE90BE3195BE756007DBA66 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PCNetworking.app/PCNetworking";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -396,15 +447,13 @@
 				);
 				INFOPLIST_FILE = "PCNetworkingTests/PCNetworkingTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
 		};
-		3C14261C1925D85D0005ECE3 /* Release */ = {
+		3CE90BE4195BE756007DBA66 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PCNetworking.app/PCNetworking";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -414,7 +463,6 @@
 				GCC_PREFIX_HEADER = "PCNetworking/PCNetworking-Prefix.pch";
 				INFOPLIST_FILE = "PCNetworkingTests/PCNetworkingTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
@@ -431,21 +479,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3C1426171925D85D0005ECE3 /* Build configuration list for PBXNativeTarget "PCNetworking" */ = {
+		3CE90BDF195BE756007DBA66 /* Build configuration list for PBXNativeTarget "PCNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C1426181925D85D0005ECE3 /* Debug */,
-				3C1426191925D85D0005ECE3 /* Release */,
+				3CE90BE0195BE756007DBA66 /* Debug */,
+				3CE90BE1195BE756007DBA66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		3C14261A1925D85D0005ECE3 /* Build configuration list for PBXNativeTarget "PCNetworkingTests" */ = {
+		3CE90BE2195BE756007DBA66 /* Build configuration list for PBXNativeTarget "PCNetworkingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3C14261B1925D85D0005ECE3 /* Debug */,
-				3C14261C1925D85D0005ECE3 /* Release */,
+				3CE90BE3195BE756007DBA66 /* Debug */,
+				3CE90BE4195BE756007DBA66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
