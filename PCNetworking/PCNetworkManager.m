@@ -10,6 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "PCNetworkRequest.h"
 #import "NSObject+PCNetworking.h"
+#import <BlocksKit/BlocksKit.h>
 
 @interface PCNetworkManager ()
 
@@ -60,7 +61,18 @@
                         keyedJson = keyedJson[key];
                     }];
                 }
-                id obj = [request.objectClass objectFromDictionary:keyedJson];
+                
+                id obj;
+                if ([keyedJson isKindOfClass:[NSArray class]])
+                {
+                    obj = [keyedJson bk_map:^(NSDictionary* elem) {
+                        return [request.objectClass objectFromDictionary:elem];
+                    }];
+                }
+                else
+                {
+                    obj = [request.objectClass objectFromDictionary:keyedJson];
+                }
                 if (obj)
                 {
                     [subscriber sendNext:obj];

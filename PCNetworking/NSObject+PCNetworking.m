@@ -274,33 +274,53 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     IMP imp = [self methodForSelector:selector];
     Class (*func)(id, SEL) = (void *)imp;
     Class collectionClass = func(self, selector);
+    if (PCClassDescendsFromClass([value class], [NSMutableArray class]))
+    {
+        return [[(NSArray*)value bk_map:^id(NSDictionary* dict) {
+            return [[collectionClass class] objectFromDictionary:dict];
+        }] mutableCopy];
+    }
     if (PCClassDescendsFromClass([value class], [NSArray class]))
     {
-        NSArray* array = [(NSArray*)value bk_map:^id(NSDictionary* dict) {
+        return [(NSArray*)value bk_map:^id(NSDictionary* dict) {
             return [[collectionClass class] objectFromDictionary:dict];
         }];
-        return [[[value class] alloc] initWithArray:array];
     }
-    if (PCClassDescendsFromClass([value class], [NSDictionary class]))
+    if (PCClassDescendsFromClass([value class], [NSMutableDictionary class]))
     {
-        NSDictionary* dictionary = [(NSDictionary*)value bk_map:^id(id key, NSDictionary* dict) {
+        return [[(NSDictionary*)value bk_map:^id(id key, NSDictionary* dict) {
+            return [[collectionClass class] objectFromDictionary:dict];
+        }] mutableCopy];
+    }
+    if (PCClassDescendsFromClass([value class], [NSMutableDictionary class]))
+    {
+        return [(NSDictionary*)value bk_map:^id(id key, NSDictionary* dict) {
             return [[collectionClass class] objectFromDictionary:dict];
         }];
-        return [[[value class] alloc] initWithDictionary:dictionary];
+    }
+    if (PCClassDescendsFromClass([value class], [NSMutableSet class]))
+    {
+        return [[(NSSet*)value bk_map:^id(NSDictionary* dict) {
+            return [[collectionClass class] objectFromDictionary:dict];
+        }] mutableCopy];
     }
     if (PCClassDescendsFromClass([value class], [NSSet class]))
     {
-        NSSet* set = [(NSSet*)value bk_map:^id(NSDictionary* dict) {
+        return [(NSSet*)value bk_map:^id(NSDictionary* dict) {
             return [[collectionClass class] objectFromDictionary:dict];
         }];
-        return [[[value class] alloc] initWithSet:set];
+    }
+    if (PCClassDescendsFromClass([value class], [NSMutableOrderedSet class]))
+    {
+        return [[(NSArray*)value bk_map:^id(NSDictionary* dict) {
+            return [[collectionClass class] objectFromDictionary:dict];
+        }] mutableCopy];
     }
     if (PCClassDescendsFromClass([value class], [NSOrderedSet class]))
     {
-        NSArray* array = [(NSArray*)value bk_map:^id(NSDictionary* dict) {
+        return [(NSArray*)value bk_map:^id(NSDictionary* dict) {
             return [[collectionClass class] objectFromDictionary:dict];
         }];
-        return [[[value class] alloc] initWithArray:array];
     }
     return value;
 }
