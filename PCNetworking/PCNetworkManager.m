@@ -48,12 +48,9 @@
 {
     NSError* error;
     NSMutableURLRequest* serializedRequest = [[AFJSONRequestSerializer serializer] requestWithMethod:request.httpVerb URLString:[NSString stringWithFormat:@"%@%@", self.baseURLString, request.urlString] parameters:request.params error:&error];
-    if (request.headerDict)
-    {
-        [request.headerDict bk_each:^(NSString* key, NSString* value) {
-            [request setValue:value forKey:key];
-        }];
-    }
+    [request.headerDict bk_each:^(NSString* key, NSString* value) {
+        [serializedRequest setValue:value forHTTPHeaderField:key];
+    }];
     
     RACSignal* signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber)
     {

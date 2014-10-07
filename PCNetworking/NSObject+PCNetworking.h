@@ -12,4 +12,6 @@
 
 + (instancetype)objectFromDictionary:(NSDictionary*)dictionary;
 
++ (NSString*)propertyNameFromNetworkName:(NSString *)networkName;
+
 @end
