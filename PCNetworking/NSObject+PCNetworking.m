@@ -200,6 +200,9 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     if (type == PCNetworkPropertyTypeInt) {
         void (*func)(id, SEL, int) = (void *)imp;
         func(self, selector, [self formatValueForInt:value]);
+    } else if (type == PCNetworkPropertyTypeBool) {
+        void (*func)(id, SEL, unsigned) = (void *)imp;
+        func(self, selector, [self formatValueForBool:value]);
     } else if (type == PCNetworkPropertyTypeUnsignedInt) {
         void (*func)(id, SEL, unsigned) = (void *)imp;
         func(self, selector, [self formatValueForUnsignedInt:value]);
@@ -334,6 +337,16 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     if ([aNum respondsToSelector:@selector(intValue)])
     {
         return [aNum intValue];
+    }
+    // raise exception
+    return 0;
+}
+
+- (int)formatValueForBool:(id)aNum
+{
+    if ([aNum respondsToSelector:@selector(boolValue)])
+    {
+        return [aNum boolValue];
     }
     // raise exception
     return 0;

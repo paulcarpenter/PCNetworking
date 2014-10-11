@@ -35,6 +35,7 @@ typedef NS_ENUM(NSUInteger, PCNetworkPropertyRetainType)
 typedef NS_ENUM(NSUInteger, PCNetworkPropertyType)
 {
     PCNetworkPropertyTypeNone,
+    PCNetworkPropertyTypeBool,
     PCNetworkPropertyTypeInt,
     PCNetworkPropertyTypeUnsignedInt,
     PCNetworkPropertyTypeShort,

@@ -14,6 +14,7 @@
 
 - (instancetype)initWithBaseURL:(NSURL*)url;
 - (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request;
+- (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart;
 - (RACSignal*)sendNewObject:(id)object;
 - (RACSignal*)sendUpdateObject:(id)object updatePaths:(NSArray*)paths;
 - (RACSignal*)sendDeleteObject:(id)object;

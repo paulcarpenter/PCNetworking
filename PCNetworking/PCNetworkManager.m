@@ -46,8 +46,26 @@
 
 - (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request
 {
+    return [self loadObjectFromJSONNetworkRequest:request multipart:NO];
+}
+
+- (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart;
+{
     NSError* error;
-    NSMutableURLRequest* serializedRequest = [[AFJSONRequestSerializer serializer] requestWithMethod:request.httpVerb URLString:[NSString stringWithFormat:@"%@%@", self.baseURLString, request.urlString] parameters:request.params error:&error];
+    NSMutableURLRequest* serializedRequest;
+    if (multipart)
+    {
+        serializedRequest = [[AFJSONRequestSerializer serializer] multipartFormRequestWithMethod:request.httpVerb URLString:[NSString stringWithFormat:@"%@%@", self.baseURLString, request.urlString] parameters:request.params constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+            [multipart bk_each:^(NSString* key, NSData* data) {
+                [formData appendPartWithFormData:data name:key];
+//                [formData appendPartWithFileData:data name:key fileName:@"attachment.jpg" mimeType:@"image/jpg"];
+            }];
+        } error:&error];
+    }
+    else
+    {
+        serializedRequest = [[AFJSONRequestSerializer serializer] requestWithMethod:request.httpVerb URLString:[NSString stringWithFormat:@"%@%@", self.baseURLString, request.urlString] parameters:request.params error:&error];
+    }
     [request.headerDict bk_each:^(NSString* key, NSString* value) {
         [serializedRequest setValue:value forHTTPHeaderField:key];
     }];
