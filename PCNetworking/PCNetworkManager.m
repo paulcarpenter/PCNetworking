@@ -46,7 +46,7 @@
 
 - (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request
 {
-    return [self loadObjectFromJSONNetworkRequest:request multipart:NO];
+    return [self loadObjectFromJSONNetworkRequest:request multipart:nil];
 }
 
 - (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart;
