@@ -90,9 +90,13 @@
                         return [request.objectClass objectFromDictionary:elem];
                     }];
                 }
-                else
+                else if(request.objectClass)
                 {
                     obj = [request.objectClass objectFromDictionary:keyedJson];
+                }
+                else
+                {
+                    obj = keyedJson;
                 }
                 if (obj)
                 {
