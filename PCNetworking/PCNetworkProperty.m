@@ -112,7 +112,7 @@
     if (_type == PCNetworkPropertyTypeNone) {
         if ([self.typeString isEqualToString:@"i"]) {
             _type = PCNetworkPropertyTypeInt;
-        } else if([self.typeString isEqualToString:@"c"]) {
+        } else if([self.typeString isEqualToString:@"B"]) {
             _type = PCNetworkPropertyTypeBool;
         } else if([self.typeString isEqualToString:@"I"]) {
             _type = PCNetworkPropertyTypeUnsignedInt;
