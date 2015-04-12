@@ -413,6 +413,13 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../Pods/Pods/Headers/Public",
+					"$(SRCROOT)/../Pods/Pods/Headers/Public/AFNetworking",
+					"$(SRCROOT)/../Pods/Pods/Headers/Public/ReactiveCocoa",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -425,6 +432,13 @@
 				DSTROOT = /tmp/PCNetworking.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PCNetworking/PCNetworking-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../Pods/Pods/Headers/Public",
+					"$(SRCROOT)/../Pods/Pods/Headers/Public/AFNetworking",
+					"$(SRCROOT)/../Pods/Pods/Headers/Public/ReactiveCocoa",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
