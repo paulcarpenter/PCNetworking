@@ -31,8 +31,14 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     
     id object = [[self alloc] init];
     
+    NSDictionary *networkNameMappings = [self networkNameMappings];
+    
     [[dictionary allKeys] enumerateObjectsUsingBlock:^(NSString* key, NSUInteger idx, BOOL *stop) {
-        if ([self propertyNameFromNetworkName:key])
+        if (networkNameMappings[key])
+        {
+            [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][networkNameMappings[key]]];
+        }
+        else if ([self propertyNameFromNetworkName:key])
         {
             [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][[self propertyNameFromNetworkName:key]]];
         }
@@ -153,6 +159,11 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
 }
 
 + (NSString*)propertyNameFromNetworkName:(NSString *)networkName
+{
+    return nil;
+}
+
++ (NSDictionary*)networkNameMappings
 {
     return nil;
 }
