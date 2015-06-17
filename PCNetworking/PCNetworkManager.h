@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class PCNetworkRequest;
+@class PCNetworkRequest, AFHTTPSessionManager;
 
 @interface PCNetworkManager : NSObject
 
@@ -16,8 +16,8 @@
 - (instancetype)initWithBaseURL:(NSURL*)url sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration;
 - (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request;
 - (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart;
-//- (RACSignal*)sendNewObject:(id)object;
-//- (RACSignal*)sendUpdateObject:(id)object updatePaths:(NSArray*)paths;
-//- (RACSignal*)sendDeleteObject:(id)object;
+
+- (void)cancelAll;
+
 
 @end

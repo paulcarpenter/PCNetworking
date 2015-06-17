@@ -130,4 +130,9 @@
     return signal;
 }
 
+- (void)cancelAll
+{
+    [self.sessionManager invalidateSessionCancelingTasks:YES];
+}
+
 @end
