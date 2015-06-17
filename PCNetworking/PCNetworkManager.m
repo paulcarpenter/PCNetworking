@@ -34,10 +34,15 @@
 
 - (instancetype)initWithBaseURL:(NSURL*)url
 {
+    return [self initWithBaseURL:url sessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+}
+
+- (instancetype)initWithBaseURL:(NSURL*)url sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration;
+{
     self = [super init];
     if (self)
     {
-        self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url sessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+        self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url sessionConfiguration:sessionConfiguration];
         self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
         self.baseURLString = [url absoluteString];
     }

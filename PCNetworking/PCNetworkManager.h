@@ -13,6 +13,7 @@
 @interface PCNetworkManager : NSObject
 
 - (instancetype)initWithBaseURL:(NSURL*)url;
+- (instancetype)initWithBaseURL:(NSURL*)url sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration;
 - (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request;
 - (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart;
 //- (RACSignal*)sendNewObject:(id)object;
