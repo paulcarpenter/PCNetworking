@@ -7,7 +7,7 @@
 //
 
 #import "PCNetworkManager.h"
-#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFHTTPSessionManager.h>
 #import "PCNetworkRequest.h"
 #import "NSObject+PCNetworking.h"
 #import <BlocksKit/BlocksKit.h>
