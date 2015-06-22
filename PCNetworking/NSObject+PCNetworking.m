@@ -31,12 +31,12 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     
     id object = [[self alloc] init];
     
-    NSDictionary *networkNameMappings = [self networkNameMappings];
+    NSDictionary *networkPropertyNameMappings = [self networkPropertyNameMappings];
     
     [[dictionary allKeys] enumerateObjectsUsingBlock:^(NSString* key, NSUInteger idx, BOOL *stop) {
-        if (networkNameMappings[key])
+        if (networkPropertyNameMappings[key])
         {
-            [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][networkNameMappings[key]]];
+            [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][networkPropertyNameMappings[key]]];
         }
         else if ([self propertyNameFromNetworkName:key])
         {
@@ -53,6 +53,63 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     }];
     
     return object;
+}
+
+- (NSDictionary *)dictionaryFromProperties:(NSArray *)propertyNames
+{
+    if (![[self class] propertiesDictionary])
+    {
+        [[self class] pcNetwork_loadProperties];
+    }
+    
+    NSMutableDictionary *dictionaryRepresentation;
+    
+    NSDictionary *propertiesDictionary = [[self class] propertiesDictionary];
+    
+    [propertyNames bk_each:^(NSString* propertyName) {
+        PCNetworkProperty* property = propertiesDictionary[propertyName];
+        if (property)
+        {
+            id object;
+            IMP imp = [self methodForSelector:property.getterSel];
+            if (property.type == PCNetworkPropertyTypeInt) {
+                int(*func)(id, SEL) = (void*)imp;
+                object = @(func(self, property.getterSel));
+            } else if (property.type == PCNetworkPropertyTypeBool) {
+                BOOL(*func)(id, SEL) = (void*)imp;
+                object = @(func(self, property.getterSel));
+            } else if (property.type == PCNetworkPropertyTypeUnsignedInt) {
+                unsigned(*func)(id, SEL) = (void*)imp;
+                object = @(func(self, property.getterSel));
+            } else if (property.type == PCNetworkPropertyTypeShort) {
+                short(*func)(id, SEL) = (void*)imp;
+                object = @(func(self, property.getterSel));
+            } else if (property.type == PCNetworkPropertyTypeLong) {
+                NSInteger(*func)(id, SEL) = (void*)imp;
+                object = @(func(self, property.getterSel));
+            } else if (property.type == PCNetworkPropertyTypeUnsignedLong) {
+                NSUInteger(*func)(id, SEL) = (void*)imp;
+                object = @(func(self, property.getterSel));
+            } else if (property.type == PCNetworkPropertyTypeFloat) {
+                float(*func)(id, SEL) = (void*)imp;
+                object = @(func(self, property.getterSel));
+            } else if (property.type == PCNetworkPropertyTypeDouble) {
+                double(*func)(id, SEL) = (void*)imp;
+                object = @(func(self, property.getterSel));
+            } else if (property.type == PCNetworkPropertyTypeId) {
+                id(*func)(id, SEL) = (void*)imp;
+                object = func(self, property.getterSel);
+            }
+            
+            if (object != nil)
+            {
+                // Check for different network name!
+                
+                [dictionaryRepresentation setObject:object forKey:propertyName];
+            }
+        }
+    }];
+    return dictionaryRepresentation;
 }
 
 ////////////////////////////////////////////////////
@@ -163,7 +220,7 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     return nil;
 }
 
-+ (NSDictionary*)networkNameMappings
++ (NSDictionary*)networkPropertyNameMappings
 {
     return nil;
 }
@@ -235,8 +292,6 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     } else if (type == PCNetworkPropertyTypeId) {
         void (*func)(id, SEL, id) = (void *)imp;
         func(self, selector, value);
-    } else {
-        // raise exception
     }
 }
 

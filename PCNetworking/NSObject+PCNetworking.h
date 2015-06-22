@@ -12,7 +12,9 @@
 
 + (instancetype)objectFromDictionary:(NSDictionary*)dictionary;
 
+- (NSDictionary *)dictionaryFromProperties:(NSArray *)propertyNames;
+
 + (NSString*)propertyNameFromNetworkName:(NSString *)networkName; // Deprecated
-+ (NSDictionary*)networkNameMappings; // Takes precedence over values from propertyNameFromNetworkName
++ (NSDictionary*)networkPropertyNameMappings; // Takes precedence over values from propertyNameFromNetworkName
 
 @end

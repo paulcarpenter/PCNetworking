@@ -104,7 +104,7 @@
 
 - (NSString*)description
 {
-    return [NSString stringWithFormat:@"<%@: %p, name=%@, type=%@, retain=%u, readonly=%d>", NSStringFromClass([self class]), self, self.name, self.typeString, self.retainType, self.readonly];
+    return [NSString stringWithFormat:@"<%@: %p, name=%@, type=%@, retain=%lu, readonly=%d>", NSStringFromClass([self class]), self, self.name, self.typeString, (unsigned long)self.retainType, self.readonly];
 }
 
 - (PCNetworkPropertyType)type
