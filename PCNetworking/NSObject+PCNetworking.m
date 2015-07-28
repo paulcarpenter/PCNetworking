@@ -11,6 +11,8 @@
 #import "PCNetworkProperty.h"
 #import "NSString+PCNetworking.h"
 #import <BlocksKit/BlocksKit.h>
+#import <CoreData/CoreData.h>
+#import <MagicalRecord/CoreData+MagicalRecord.h>
 
 static char kPCNetworkPropertiesDictionaryKey;
 static NSMutableArray* kPCNetworkProtocolNameList;
@@ -29,7 +31,16 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
         [self pcNetwork_loadProperties];
     }
     
-    id object = [[self alloc] init];
+    id object;
+    if (PCClassDescendsFromClass(self, [NSManagedObject class]))
+    {
+        Class managedObject = self; // Avoid class method warning, we know it's a subclass already
+        object = [managedObject MR_createEntity];
+    }
+    else
+    {
+        object = [[self alloc] init];
+    }
     
     NSDictionary *networkPropertyNameMappings = [self networkPropertyNameMappings];
     

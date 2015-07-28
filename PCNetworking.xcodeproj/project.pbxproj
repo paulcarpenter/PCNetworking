@@ -425,9 +425,11 @@
 					"$(SRCROOT)/../Pods/Pods/Headers",
 					"$(SRCROOT)/../Pods/Pods/Headers/AFNetworking",
 					"$(SRCROOT)/../Pods/Pods/Headers/ReactiveCocoa",
+					"$(SRCROOT)/../Pods/Pods/Headers/MagicalRecord",
 					"$(SRCROOT)/../../../Pods/Headers/Public",
 					"$(SRCROOT)/../../../Pods/Headers/Public/AFNetworking",
 					"$(SRCROOT)/../../../Pods/Headers/Public/ReactiveCocoa",
+					"$(SRCROOT)/../../../Pods/Headers/Public/MagicalRecord",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -447,9 +449,11 @@
 					"$(SRCROOT)/../Pods/Pods/Headers",
 					"$(SRCROOT)/../Pods/Pods/Headers/AFNetworking",
 					"$(SRCROOT)/../Pods/Pods/Headers/ReactiveCocoa",
+					"$(SRCROOT)/../Pods/Pods/Headers/MagicalRecord",
 					"$(SRCROOT)/../../../Pods/Headers/Public",
 					"$(SRCROOT)/../../../Pods/Headers/Public/AFNetworking",
 					"$(SRCROOT)/../../../Pods/Headers/Public/ReactiveCocoa",
+					"$(SRCROOT)/../../../Pods/Headers/Public/MagicalRecord",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
