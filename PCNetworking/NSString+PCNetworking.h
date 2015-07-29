@@ -11,5 +11,6 @@
 @interface NSString (PCNetworking)
 
 - (NSString*)naiveCamelCaseString;
+- (NSString*)naiveSnakeCaseString;
 
 @end

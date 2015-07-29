@@ -28,4 +28,28 @@
     return output;
 }
 
+- (NSString *)naiveSnakeCaseString
+{
+    NSMutableString *output = [NSMutableString string];
+    NSCharacterSet *uppercase = [NSCharacterSet uppercaseLetterCharacterSet];
+    for (NSInteger idx = 0; idx < self.length; idx += 1) {
+        unichar c = [self characterAtIndex:idx];
+        if (idx < self.length - 1)
+        {
+            unichar nextC = [self characterAtIndex:idx + 1];
+            if ([uppercase characterIsMember:nextC])
+            {
+                [output appendFormat:@"%@", [[NSString stringWithCharacters:&c length:1] lowercaseString]];
+                continue;
+            }
+        }
+        if ([uppercase characterIsMember:c]) {
+            [output appendFormat:@"_%@", [[NSString stringWithCharacters:&c length:1] lowercaseString]];
+        } else {
+            [output appendFormat:@"%C", c];
+        }
+    }
+    return output;
+}
+
 @end
