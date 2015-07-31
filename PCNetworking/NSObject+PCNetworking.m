@@ -35,7 +35,7 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     if (PCClassDescendsFromClass(self, [NSManagedObject class]))
     {
         Class managedObject = self; // Avoid class method warning, we know it's a subclass already
-        object = [managedObject MR_createEntity];
+        object = [managedObject MR_createInContext:[NSManagedObjectContext MR_rootSavingContext]];
     }
     else
     {
