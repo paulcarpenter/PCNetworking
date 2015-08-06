@@ -89,15 +89,18 @@
                 }
                 
                 id obj;
-                if ([keyedJson isKindOfClass:[NSArray class]])
+                if(request.objectClass)
                 {
-                    obj = [keyedJson bk_map:^(NSDictionary* elem) {
-                        return [request.objectClass objectFromDictionary:elem];
-                    }];
-                }
-                else if(request.objectClass)
-                {
-                    obj = [request.objectClass objectFromDictionary:keyedJson];
+                    if ([keyedJson isKindOfClass:[NSArray class]])
+                    {
+                        obj = [keyedJson bk_map:^(NSDictionary* elem) {
+                            return [request.objectClass objectFromDictionary:elem];
+                        }];
+                    }
+                    else
+                    {
+                        obj = [request.objectClass objectFromDictionary:keyedJson];
+                    }
                 }
                 else
                 {
