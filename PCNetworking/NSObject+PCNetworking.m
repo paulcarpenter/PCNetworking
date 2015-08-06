@@ -289,10 +289,10 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
         void (*func)(id, SEL, short) = (void *)imp;
         func(self, selector, [self formatValueForShort:value]);
     } else if (type == PCNetworkPropertyTypeLong) {
-        void (*func)(id, SEL, NSInteger) = (void *)imp;
+        void (*func)(id, SEL, SInt64) = (void *)imp;
         func(self, selector, [self formatValueForLong:value]);
     } else if (type == PCNetworkPropertyTypeUnsignedLong) {
-        void (*func)(id, SEL, NSUInteger) = (void *)imp;
+        void (*func)(id, SEL, UInt64) = (void *)imp;
         func(self, selector, [self formatValueForUnsignedLong:value]);
     } else if (type == PCNetworkPropertyTypeFloat) {
         void (*func)(id, SEL, float) = (void *)imp;
@@ -448,21 +448,21 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     return 0;
 }
 
-- (NSInteger)formatValueForLong:(id)aNum
+- (SInt64)formatValueForLong:(id)aNum
 {
-    if ([aNum respondsToSelector:@selector(integerValue)])
+    if ([aNum respondsToSelector:@selector(longValue)])
     {
-        return [aNum integerValue];
+        return [aNum longValue];
     }
     // raise exception
     return 0;
 }
 
-- (NSUInteger)formatValueForUnsignedLong:(id)aNum
+- (UInt64)formatValueForUnsignedLong:(id)aNum
 {
-    if ([aNum respondsToSelector:@selector(unsignedIntegerValue)])
+    if ([aNum respondsToSelector:@selector(unsignedLongValue)])
     {
-        return [aNum unsignedIntegerValue];
+        return [aNum unsignedLongValue];
     }
     // raise exception
     return 0;
