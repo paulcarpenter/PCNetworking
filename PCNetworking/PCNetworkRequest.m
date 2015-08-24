@@ -34,7 +34,7 @@
 {
     if (params)
     {
-        self.mutableParams = [self.params mutableCopy];
+        self.mutableParams = [params mutableCopy];
     }
     else
     {
