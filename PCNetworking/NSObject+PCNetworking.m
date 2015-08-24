@@ -12,7 +12,7 @@
 #import "NSString+PCNetworking.h"
 #import <BlocksKit/BlocksKit.h>
 #import <CoreData/CoreData.h>
-#import <MagicalRecord/CoreData+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 
 static char kPCNetworkPropertiesDictionaryKey;
 static NSMutableArray* kPCNetworkProtocolNameList;
