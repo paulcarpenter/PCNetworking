@@ -30,6 +30,18 @@
     return [[PCNetworkRequest alloc] initWithHTTPVerb:@"DELETE" urlString:urlString params:params objectClass:klass responseKeys:responseKeys];
 }
 
+- (void)setParams:(NSMutableDictionary *)params
+{
+    if (params)
+    {
+        self.mutableParams = [self.params mutableCopy];
+    }
+    else
+    {
+        self.mutableParams = [NSMutableDictionary dictionary];
+    }
+}
+
 ////////////////////////////////////////////////////
 #pragma mark - Private
 ////////////////////////////////////////////////////

@@ -12,7 +12,8 @@
 
 @property (nonatomic, strong) NSString* httpVerb;
 @property (nonatomic, strong) NSString* urlString;
-@property (nonatomic, strong) NSDictionary* params;
+@property (nonatomic, strong) NSMutableDictionary* mutableParams;
+@property (nonatomic, copy) NSDictionary *params;
 @property (nonatomic, strong) Class objectClass;
 @property (nonatomic) NSArray* responseKeys;
 @property (nonatomic) NSDictionary* headerDict;
