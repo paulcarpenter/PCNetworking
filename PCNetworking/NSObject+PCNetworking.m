@@ -319,6 +319,10 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
         {
             if ([signatureType isEqualToString:@"@"] && strict)
             {
+                if ([self pcNetwork_propertyWantsCollection:property])
+                {
+                    return YES;
+                }
                 BOOL sameClass = [value isKindOfClass:NSClassFromString(property.className)];
                 return sameClass;
             }
@@ -337,7 +341,7 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     if (property.type == PCNetworkPropertyTypeId)
     {
         Class propertyClass = NSClassFromString(property.className);
-        if (PCClassDescendsFromClass(propertyClass, [NSArray class]) || PCClassDescendsFromClass(propertyClass, [NSDictionary class]))
+        if (PCClassDescendsFromClass(propertyClass, [NSArray class]) || PCClassDescendsFromClass(propertyClass, [NSDictionary class]) || PCClassDescendsFromClass(propertyClass, [NSSet class]) || PCClassDescendsFromClass(propertyClass, [NSOrderedSet class]))
         {
             if ([self respondsToSelector:NSSelectorFromString([NSString stringWithFormat:@"%@ContainedClass", property.name])])
             {
