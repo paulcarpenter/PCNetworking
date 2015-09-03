@@ -45,21 +45,24 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     NSDictionary *networkPropertyNameMappings = [self networkPropertyNameMappings];
     
     [[dictionary allKeys] enumerateObjectsUsingBlock:^(NSString* key, NSUInteger idx, BOOL *stop) {
-        if (networkPropertyNameMappings[key])
+        if (![dictionary[key] isEqual:[NSNull null]])
         {
-            [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][networkPropertyNameMappings[key]]];
-        }
-        else if ([self propertyNameFromNetworkName:key])
-        {
-            [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][[self propertyNameFromNetworkName:key]]];
-        }
-        else if ([self shouldCamelCaseIncomingDict] && [[self propertiesDictionary] objectForKey:[key naiveCamelCaseString]])
-        {
-            [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][[key naiveCamelCaseString]]];
-        }
-        else if ([[self propertiesDictionary] objectForKey:key])
-        {
-            [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][key]];
+            if (networkPropertyNameMappings[key])
+            {
+                [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][networkPropertyNameMappings[key]]];
+            }
+            else if ([self propertyNameFromNetworkName:key])
+            {
+                [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][[self propertyNameFromNetworkName:key]]];
+            }
+            else if ([self shouldCamelCaseIncomingDict] && [[self propertiesDictionary] objectForKey:[key naiveCamelCaseString]])
+            {
+                [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][[key naiveCamelCaseString]]];
+            }
+            else if ([[self propertiesDictionary] objectForKey:key])
+            {
+                [object assignValue:dictionary[key] toProperty:[self propertiesDictionary][key]];
+            }
         }
     }];
     
