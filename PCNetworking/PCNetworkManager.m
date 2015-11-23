@@ -78,47 +78,50 @@
     RACSignal* signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber)
     {
         NSURLSessionTask* task = [self.sessionManager dataTaskWithRequest:serializedRequest completionHandler:^(NSURLResponse *response, id json, NSError *error) {
-            if (!error)
-            {
-                id __block keyedJson = json;
-                if (request.responseKeys)
+            dispatch_queue_t queue = request.completionQueue ?: dispatch_get_main_queue();
+            dispatch_async(queue, ^{
+                if (!error)
                 {
-                    [request.responseKeys enumerateObjectsUsingBlock:^(NSString* key, NSUInteger idx, BOOL *stop) {
-                        keyedJson = keyedJson[key];
-                    }];
-                }
-                
-                id obj;
-                if(request.objectClass)
-                {
-                    if ([keyedJson isKindOfClass:[NSArray class]])
+                    id __block keyedJson = json;
+                    if (request.responseKeys)
                     {
-                        obj = [keyedJson bk_map:^(NSDictionary* elem) {
-                            return [request.objectClass objectFromDictionary:elem];
+                        [request.responseKeys enumerateObjectsUsingBlock:^(NSString* key, NSUInteger idx, BOOL *stop) {
+                            keyedJson = keyedJson[key];
                         }];
+                    }
+                    
+                    id obj;
+                    if(request.objectClass)
+                    {
+                        if ([keyedJson isKindOfClass:[NSArray class]])
+                        {
+                            obj = [keyedJson bk_map:^(NSDictionary* elem) {
+                                return [request.objectClass objectFromDictionary:elem];
+                            }];
+                        }
+                        else
+                        {
+                            obj = [request.objectClass objectFromDictionary:keyedJson];
+                        }
                     }
                     else
                     {
-                        obj = [request.objectClass objectFromDictionary:keyedJson];
+                        obj = keyedJson;
                     }
-                }
-                else
-                {
-                    obj = keyedJson;
-                }
-                if (obj)
-                {
-                    [subscriber sendNext:obj];
+                    if (obj)
+                    {
+                        [subscriber sendNext:obj];
+                    }
+                    else
+                    {
+                        [subscriber sendError:error];
+                    }
                 }
                 else
                 {
                     [subscriber sendError:error];
                 }
-            }
-            else
-            {
-                [subscriber sendError:error];
-            }
+            });
         }];
         
         [task resume];

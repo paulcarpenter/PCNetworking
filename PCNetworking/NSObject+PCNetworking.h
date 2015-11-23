@@ -12,6 +12,8 @@
 
 + (instancetype)objectFromDictionary:(NSDictionary*)dictionary;
 
++ (instancetype)objectFromDictionary:(NSDictionary*)dictionary inContext:(NSManagedObjectContext *)context; // Core data specific
+
 - (NSDictionary *)dictionaryFromProperties:(NSArray *)propertyNames;
 
 + (NSString*)propertyNameFromNetworkName:(NSString *)networkName; // Deprecated

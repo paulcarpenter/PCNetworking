@@ -17,6 +17,7 @@
 @property (nonatomic, strong) Class objectClass;
 @property (nonatomic) NSArray* responseKeys;
 @property (nonatomic) NSDictionary* headerDict;
+@property (nonatomic) dispatch_queue_t completionQueue;
 
 // Convenience methods
 + (instancetype)getRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray*)responseKeys;

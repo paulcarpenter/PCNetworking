@@ -26,6 +26,11 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
 
 + (instancetype)objectFromDictionary:(NSDictionary *)dictionary
 {
+    return [self objectFromDictionary:dictionary inContext:nil];
+}
+
++ (instancetype)objectFromDictionary:(NSDictionary *)dictionary inContext:(NSManagedObjectContext *)context
+{
     if (![self propertiesDictionary])
     {
         [self pcNetwork_loadProperties];
@@ -34,8 +39,15 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
     id object;
     if (PCClassDescendsFromClass(self, [NSManagedObject class]))
     {
-        Class managedObject = self; // Avoid class method warning, we know it's a subclass already
-        object = [managedObject MR_createEntity];
+        Class managedObjectClass = self; // Avoid class method warning, we know it's a subclass already
+        if (context)
+        {
+            object = [managedObjectClass MR_createEntityInContext:context];
+        }
+        else
+        {
+            object = [managedObjectClass MR_createEntity];
+        }
     }
     else
     {
