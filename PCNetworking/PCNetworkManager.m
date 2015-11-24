@@ -78,8 +78,8 @@
     RACSignal* signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber)
     {
         NSURLSessionTask* task = [self.sessionManager dataTaskWithRequest:serializedRequest completionHandler:^(NSURLResponse *response, id json, NSError *error) {
-            dispatch_queue_t queue = request.completionQueue ?: dispatch_get_main_queue();
-            dispatch_async(queue, ^{
+            
+            void (^responseBlock)() = ^void {
                 if (!error)
                 {
                     id __block keyedJson = json;
@@ -121,7 +121,17 @@
                 {
                     [subscriber sendError:error];
                 }
-            });
+            };
+            
+            dispatch_queue_t queue = request.completionQueue ?: dispatch_get_main_queue();
+            if (queue == dispatch_get_main_queue())
+            {
+                responseBlock();
+            }
+            else
+            {
+                dispatch_async(queue, responseBlock);
+            }
         }];
         
         [task resume];
