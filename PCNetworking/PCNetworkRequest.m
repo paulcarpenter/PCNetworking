@@ -10,24 +10,24 @@
 
 @implementation PCNetworkRequest
 
-+ (instancetype)getRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray *)responseKeys
++ (instancetype)getRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray *)responseKeys completionQueue:(dispatch_queue_t)queue
 {
-    return [[PCNetworkRequest alloc] initWithHTTPVerb:@"GET" urlString:urlString params:params objectClass:klass responseKeys:responseKeys];
+    return [[PCNetworkRequest alloc] initWithHTTPVerb:@"GET" urlString:urlString params:params objectClass:klass responseKeys:responseKeys completionQueue:queue];
 }
 
-+ (instancetype)postRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray *)responseKeys
++ (instancetype)postRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray *)responseKeys completionQueue:(dispatch_queue_t)queue
 {
-    return [[PCNetworkRequest alloc] initWithHTTPVerb:@"POST" urlString:urlString params:params objectClass:klass responseKeys:responseKeys];
+    return [[PCNetworkRequest alloc] initWithHTTPVerb:@"POST" urlString:urlString params:params objectClass:klass responseKeys:responseKeys completionQueue:queue];
 }
 
-+ (instancetype)putRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray *)responseKeys
++ (instancetype)putRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray *)responseKeys completionQueue:(dispatch_queue_t)queue
 {
-    return [[PCNetworkRequest alloc] initWithHTTPVerb:@"PUT" urlString:urlString params:params objectClass:klass responseKeys:responseKeys];
+    return [[PCNetworkRequest alloc] initWithHTTPVerb:@"PUT" urlString:urlString params:params objectClass:klass responseKeys:responseKeys completionQueue:queue];
 }
 
-+ (instancetype)deleteRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray *)responseKeys
++ (instancetype)deleteRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray *)responseKeys completionQueue:(dispatch_queue_t)queue
 {
-    return [[PCNetworkRequest alloc] initWithHTTPVerb:@"DELETE" urlString:urlString params:params objectClass:klass responseKeys:responseKeys];
+    return [[PCNetworkRequest alloc] initWithHTTPVerb:@"DELETE" urlString:urlString params:params objectClass:klass responseKeys:responseKeys completionQueue:queue];
 }
 
 - (void)setParams:(NSMutableDictionary *)params
@@ -46,7 +46,7 @@
 #pragma mark - Private
 ////////////////////////////////////////////////////
 
-- (instancetype)initWithHTTPVerb:(NSString*)httpVerb urlString:(NSString*)urlString params:(NSDictionary*)params objectClass:(Class)objectClass responseKeys:(NSArray*)responseKeys
+- (instancetype)initWithHTTPVerb:(NSString*)httpVerb urlString:(NSString*)urlString params:(NSDictionary*)params objectClass:(Class)objectClass responseKeys:(NSArray*)responseKeys completionQueue:(dispatch_queue_t)queue
 {
     self = [super init];
     if (self)
@@ -56,10 +56,9 @@
         self.params = params;
         self.objectClass = objectClass;
         self.responseKeys = responseKeys;
+        self.completionQueue = queue;
     }
     return self;
 }
-
-
 
 @end

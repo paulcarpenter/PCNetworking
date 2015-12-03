@@ -20,12 +20,12 @@
 @property (nonatomic) dispatch_queue_t completionQueue;
 
 // Convenience methods
-+ (instancetype)getRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray*)responseKeys;
++ (instancetype)getRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray*)responseKeys completionQueue:(dispatch_queue_t)queue;
 
-+ (instancetype)postRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray*)responseKeys;
++ (instancetype)postRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray*)responseKeys completionQueue:(dispatch_queue_t)queue;
 
-+ (instancetype)putRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray*)responseKeys;
++ (instancetype)putRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray*)responseKeys completionQueue:(dispatch_queue_t)queue;
 
-+ (instancetype)deleteRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray*)responseKeys;
++ (instancetype)deleteRequestWithURLString:(NSString*)urlString params:(NSDictionary*)params klass:(Class)klass responseKeys:(NSArray*)responseKeys completionQueue:(dispatch_queue_t)queue;
 
 @end
