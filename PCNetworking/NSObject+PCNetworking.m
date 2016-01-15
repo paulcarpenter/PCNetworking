@@ -271,7 +271,7 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
             selector = [self respondsToSelector:property.setterSel] ? property.setterSel : nil;
         }
         
-        if ([self pcNetwork_validMethodForSetterSelector:selector property:property value:value strict:strict])
+        if (selector && [self pcNetwork_validMethodForSetterSelector:selector property:property value:value strict:strict])
         {
             if ([self pcNetwork_propertyWantsCollection:property])
             {
