@@ -112,7 +112,8 @@
     if (_type == PCNetworkPropertyTypeNone) {
         if ([self.typeString isEqualToString:@"i"]) {
             _type = PCNetworkPropertyTypeInt;
-        } else if([self.typeString isEqualToString:@"B"]) {
+        } else if([self.typeString isEqualToString:@"B"] || [self.typeString isEqualToString:@"c"]) {
+            // http://lists.apple.com/archives/cocoa-dev/2015/Feb/msg00255.html
             _type = PCNetworkPropertyTypeBool;
         } else if([self.typeString isEqualToString:@"I"]) {
             _type = PCNetworkPropertyTypeUnsignedInt;
