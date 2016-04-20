@@ -13,6 +13,8 @@
 #import <BlocksKit/BlocksKit.h>
 #import <CoreData/CoreData.h>
 #import <MagicalRecord/MagicalRecord.h>
+#import <Mantle/MTLModel.h>
+#import <Mantle/MTLJSONAdapter.h>
 
 static char kPCNetworkPropertiesDictionaryKey;
 static NSMutableArray* kPCNetworkProtocolNameList;
@@ -48,6 +50,12 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
         {
             object = [managedObjectClass MR_createEntity];
         }
+    }
+    else if (PCClassDescendsFromClass(self, [MTLModel class]))
+    {
+        NSError *error;
+        object = [MTLJSONAdapter modelOfClass:[self class] fromJSONDictionary:dictionary error:&error];
+        return object;
     }
     else
     {
