@@ -54,17 +54,31 @@
     return [self loadObjectFromJSONNetworkRequest:request multipart:nil];
 }
 
-- (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart;
+- (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart
+{
+    return [self loadObjectFromJSONNetworkRequest:request multipart:multipart files:nil];
+}
+
+- (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart files:(NSDictionary *)multipartFiles;
 {
     NSError* error;
     NSMutableURLRequest* serializedRequest;
-    if (multipart)
+    if (multipart || multipartFiles)
     {
         serializedRequest = [[AFJSONRequestSerializer serializer] multipartFormRequestWithMethod:request.httpVerb URLString:[NSString stringWithFormat:@"%@%@", self.baseURLString, request.urlString] parameters:request.mutableParams constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-            [multipart bk_each:^(NSString* key, NSData* data) {
-                [formData appendPartWithFormData:data name:key];
-//                [formData appendPartWithFileData:data name:key fileName:@"attachment.jpg" mimeType:@"image/jpg"];
-            }];
+            
+            if (multipartFiles)
+            {
+                [multipartFiles bk_each:^(NSString* key, NSData* data) {
+                   [formData appendPartWithFileData:multipartFiles[@"data"] name:multipartFiles[@"name"] fileName:@"attachment.jpg" mimeType:@"image/jpg"];
+                }];
+            }
+            if (multipart)
+            {
+                [multipart bk_each:^(NSString* key, NSData* data) {
+                    [formData appendPartWithFormData:data name:key];
+                }];
+            }
         } error:&error];
     }
     else
