@@ -69,9 +69,7 @@
             
             if (multipartFiles)
             {
-                [multipartFiles bk_each:^(NSString* key, NSData* data) {
-                   [formData appendPartWithFileData:multipartFiles[@"data"] name:multipartFiles[@"name"] fileName:@"attachment.jpg" mimeType:@"image/jpg"];
-                }];
+                [formData appendPartWithFileData:multipartFiles[@"data"] name:multipartFiles[@"name"] fileName:@"file" mimeType:multipartFiles[@"mimeType"]];
             }
             if (multipart)
             {
