@@ -69,7 +69,7 @@
             
             if (multipartFiles)
             {
-                [formData appendPartWithFileData:multipartFiles[@"data"] name:multipartFiles[@"name"] fileName:@"file" mimeType:multipartFiles[@"mimeType"]];
+                [formData appendPartWithFileData:multipartFiles[@"data"] name:multipartFiles[@"name"] fileName:multipartFiles[@"fileName"] mimeType:multipartFiles[@"mimeType"]];
             }
             if (multipart)
             {
