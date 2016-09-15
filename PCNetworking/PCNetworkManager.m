@@ -8,6 +8,7 @@
 
 #import "PCNetworkManager.h"
 #import <AFNetworking/AFHTTPSessionManager.h>
+#import <AFgzipRequestSerializer/AFgzipRequestSerializer.h>
 #import "PCNetworkRequest.h"
 #import "NSObject+PCNetworking.h"
 #import <BlocksKit/BlocksKit.h>
@@ -81,7 +82,15 @@
     }
     else
     {
-        serializedRequest = [[AFJSONRequestSerializer serializer] requestWithMethod:request.httpVerb URLString:[NSString stringWithFormat:@"%@%@", self.baseURLString, request.urlString] parameters:request.mutableParams error:&error];
+        if (request.useGzip)
+        {
+            serializedRequest = [[AFgzipRequestSerializer serializerWithSerializer:[AFJSONRequestSerializer serializer]] requestWithMethod:request.httpVerb URLString:[NSString stringWithFormat:@"%@%@", self.baseURLString, request.urlString] parameters:request.mutableParams error:&error];
+        }
+        else
+        {
+            serializedRequest = [[AFJSONRequestSerializer serializer] requestWithMethod:request.httpVerb URLString:[NSString stringWithFormat:@"%@%@", self.baseURLString, request.urlString] parameters:request.mutableParams error:&error];
+        }
+        
     }
     [request.headerDict bk_each:^(NSString* key, NSString* value) {
         [serializedRequest setValue:value forHTTPHeaderField:key];

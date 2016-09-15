@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AFURLRequestSerialization.h>
 
 @interface PCNetworkRequest : NSObject
 
@@ -15,6 +16,7 @@
 @property (nonatomic, strong) NSMutableDictionary* mutableParams;
 @property (nonatomic, copy) NSDictionary *params;
 @property (nonatomic, strong) Class objectClass;
+@property (nonatomic, readwrite) BOOL useGzip;
 @property (nonatomic) NSArray* responseKeys;
 @property (nonatomic) NSDictionary* headerDict;
 @property (nonatomic) dispatch_queue_t completionQueue;

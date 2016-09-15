@@ -51,6 +51,7 @@
     self = [super init];
     if (self)
     {
+        self.useGzip = NO;
         self.httpVerb = httpVerb;
         self.urlString = urlString;
         self.params = params;
