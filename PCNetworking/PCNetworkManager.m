@@ -169,7 +169,10 @@
 
 - (void)cancelAll
 {
-    [self.sessionManager invalidateSessionCancelingTasks:YES];
+    for (NSURLSessionTask *task in self.sessionManager.tasks)
+    {
+        [task cancel];
+    }
 }
 
 @end
