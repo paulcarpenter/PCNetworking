@@ -16,7 +16,7 @@
 - (instancetype)initWithBaseURL:(NSURL*)url sessionConfiguration:(NSURLSessionConfiguration *)sessionConfiguration;
 - (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request;
 - (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart;
-- (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart files:(nullable NSDictionary *)multipartFiles;
+- (RACSignal*)loadObjectFromJSONNetworkRequest:(PCNetworkRequest*)request multipart:(NSDictionary*)multipart files:(NSDictionary *)multipartFiles;
 
 
 - (void)cancelAll;
