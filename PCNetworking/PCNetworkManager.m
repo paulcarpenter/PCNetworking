@@ -96,6 +96,11 @@
         [serializedRequest setValue:value forHTTPHeaderField:key];
     }];
     
+    if (request.extendedDuration)
+    {
+        serializedRequest.timeoutInterval = 5.f * 60.f;
+    }
+    
     RACSignal* signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber)
     {
         NSURLSessionTask* task = [self.sessionManager dataTaskWithRequest:serializedRequest completionHandler:^(NSURLResponse *response, id json, NSError *error) {

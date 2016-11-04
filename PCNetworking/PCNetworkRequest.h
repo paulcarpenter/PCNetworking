@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSDictionary *params;
 @property (nonatomic, strong) Class objectClass;
 @property (nonatomic, readwrite) BOOL useGzip;
+@property (nonatomic, readwrite) BOOL extendedDuration;
 @property (nonatomic) NSArray* responseKeys;
 @property (nonatomic) NSDictionary* headerDict;
 @property (nonatomic) dispatch_queue_t completionQueue;

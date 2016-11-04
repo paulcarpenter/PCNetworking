@@ -52,6 +52,7 @@
     if (self)
     {
         self.useGzip = NO;
+        self.extendedDuration = NO;
         self.httpVerb = httpVerb;
         self.urlString = urlString;
         self.params = params;
