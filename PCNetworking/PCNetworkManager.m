@@ -45,6 +45,7 @@
     {
         self.sessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:url sessionConfiguration:sessionConfiguration];
         self.sessionManager.requestSerializer = [AFJSONRequestSerializer serializer];
+        [self.sessionManager.requestSerializer setTimeoutInterval:sessionConfiguration.timeoutIntervalForRequest];
         self.baseURLString = [url absoluteString];
     }
     return self;
