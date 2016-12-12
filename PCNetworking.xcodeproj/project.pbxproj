@@ -356,10 +356,10 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../Pods/Pods/Headers",
 					"$(SRCROOT)/../Pods/Pods/Headers/AFNetworking",
-					"$(SRCROOT)/../Pods/Pods/Headers/ReactiveCocoa",
+					"$(SRCROOT)/../Pods/Pods/Headers/ReactiveObjC",
 					"$(SRCROOT)/../../../Pods/Headers/Public",
 					"$(SRCROOT)/../../../Pods/Headers/Public/AFNetworking",
-					"$(SRCROOT)/../../../Pods/Headers/Public/ReactiveCocoa",
+					"$(SRCROOT)/../../../Pods/Headers/Public/ReactiveObjC",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
@@ -398,10 +398,10 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../Pods/Pods/Headers",
 					"$(SRCROOT)/../Pods/Pods/Headers/AFNetworking",
-					"$(SRCROOT)/../Pods/Pods/Headers/ReactiveCocoa",
+					"$(SRCROOT)/../Pods/Pods/Headers/ReactiveObjC",
 					"$(SRCROOT)/../../../Pods/Headers/Public",
 					"$(SRCROOT)/../../../Pods/Headers/Public/AFNetworking",
-					"$(SRCROOT)/../../../Pods/Headers/Public/ReactiveCocoa",
+					"$(SRCROOT)/../../../Pods/Headers/Public/ReactiveObjC",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
