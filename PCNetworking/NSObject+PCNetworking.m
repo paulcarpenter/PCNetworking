@@ -86,6 +86,14 @@ BOOL PCClassDescendsFromClass(Class classA, Class classB);
         }
     }];
     
+    SEL callbackSel = NSSelectorFromString(@"pc_didCreateFromDictionary:");
+    if ([object respondsToSelector:callbackSel])
+    {
+        IMP imp = [object methodForSelector:callbackSel];
+        void (*func)(id, SEL, NSDictionary *) = (void *)imp;
+        func(object, callbackSel, dictionary);
+    }
+    
     return object;
 }
 
