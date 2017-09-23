@@ -361,7 +361,7 @@
 					"$(SRCROOT)/../../../Pods/Headers/Public/AFNetworking",
 					"$(SRCROOT)/../../../Pods/Headers/Public/ReactiveObjC",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -403,7 +403,7 @@
 					"$(SRCROOT)/../../../Pods/Headers/Public/AFNetworking",
 					"$(SRCROOT)/../../../Pods/Headers/Public/ReactiveObjC",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
