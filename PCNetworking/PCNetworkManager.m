@@ -104,8 +104,7 @@
     
     RACSignal* signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber)
     {
-        NSURLSessionTask* task = [self.sessionManager dataTaskWithRequest:serializedRequest completionHandler:^(NSURLResponse *response, id json, NSError *error) {
-            
+        NSURLSessionTask* task = [self.sessionManager dataTaskWithRequest:serializedRequest uploadProgress:nil downloadProgress:nil completionHandler:^(NSURLResponse *response, id json, NSError *error) {
             void (^responseBlock)() = ^void {
                 if (!error)
                 {
